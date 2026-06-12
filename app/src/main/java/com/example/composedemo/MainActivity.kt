@@ -1,5 +1,10 @@
 package com.example.composedemo
 
+import androidx.compose.material3.Text
+import androidx.compose.material3.Slider
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,6 +34,35 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier) {
 
+}
+@Composable
+fun DemoText(message: String, fontSize: Float) {
+    Text(
+        text = message,
+        fontSize = fontSize.sp,
+        fontWeight = FontWeight.Bold
+    )
+}
+
+@Preview
+@Composable
+fun DemoTextPreview() {
+    ComposeDemoTheme {
+        DemoText(message = "Welcome to Android", fontSize = 12f)
+    }
+}
+
+@Composable
+fun DemoSlider(
+    sliderPosition: Float,
+    onPositionChange: (Float) -> Unit
+) {
+    Slider(
+        modifier = Modifier.padding(10.dp),
+        valueRange = 20f..38f,
+        value = sliderPosition,
+        onValueChange = onPositionChange
+    )
 }
 
 @Preview(showBackground = true)

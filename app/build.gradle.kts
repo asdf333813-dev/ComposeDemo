@@ -5,16 +5,13 @@ plugins {
 
 android {
     namespace = "com.example.composedemo"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
+
 
     defaultConfig {
         applicationId = "com.example.composedemo"
         minSdk = 27
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -35,6 +32,7 @@ android {
     buildFeatures {
         compose = true
     }
+    compileSdkMinor = 0
 }
 
 dependencies {
